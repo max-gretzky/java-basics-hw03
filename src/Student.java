@@ -3,7 +3,7 @@ public class Student {
   private int rating;
   private String name;
   public static int count;
-  public static int sumOfRating;
+  public static double sumOfRating;
 
   public Student() {
     count++;
@@ -15,14 +15,10 @@ public class Student {
   }
 
   public static double getAvgRating() {
-    double sum = sumOfRating;
-    double num = count;
-    double avg = sum / num;
-    if (count > 0) {
-      return avg;
-    } else {
-      return 0;
+    if (Student.count > 0) {
+      return Student.sumOfRating / Student.count;
     }
+    return 0;
   }
 
   public String getName() {
@@ -47,7 +43,7 @@ public class Student {
   }
 
   public void changeRating(int rating) {
-    sumOfRating -= rating;
+    sumOfRating -= this.rating;
     setRating(rating);
   }
 
