@@ -82,7 +82,7 @@ public class StudentTest {
 
     students.add(student2);
 
-    assertFalse(student1.betterStudent(student2),
+    assertFalse(student1.betterStudent(),
         student1 + " is not better than " + student2);
 
     Student student3 = new Student("Petro");
@@ -95,7 +95,7 @@ public class StudentTest {
 
     students.add(student4);
 
-    assertTrue(student3.betterStudent(student4),
+    assertTrue(student3.betterStudent(),
         student1 + " is not better than " + student2);
   }
 
