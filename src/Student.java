@@ -2,12 +2,9 @@ public class Student {
 
   private int rating;
   private String name;
-  public static int count;
-  public static double sumOfRating;
 
-  public Student() {
-    count++;
-  }
+  private static int count;
+  private static int sumOfRating;
 
   public Student(String name) {
     this.name = name;
@@ -16,9 +13,10 @@ public class Student {
 
   public static double getAvgRating() {
     if (Student.count > 0) {
-      return Student.sumOfRating / Student.count;
+      return (double) Student.sumOfRating / Student.count;
     }
     return 0;
+    /*Student.count < 0.0 ? Student.sumOfRating / Student.count : 0.0;*/
   }
 
   public String getName() {
